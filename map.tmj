@@ -433,8 +433,8 @@
         }, 
         {
          "name":"script",
-         "type":"file",
-         "value":"https:\/\/unpkg.com\/@workadventure\/scripting-api-extra@1.5.4\/dist\/bundle.js"
+         "type":"string",
+         "value":"script: https:\/\/unpkg.com\/@workadventure\/scripting-api-extra@1.5.4\/dist\/bundle.js"
         }],
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
