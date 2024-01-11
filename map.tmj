@@ -4911,7 +4911,7 @@
             {
               "name": "playAudio",
               "type": "string",
-              "value": "public/sinister-156638.mp3"
+              "value": "public/Rudelhymne.wav"
             }
           ],
           "rotation": 0,
@@ -5552,7 +5552,7 @@
     {
       "columns": 11,
       "firstgid": 1,
-      "image": "map-chunk-1-fb8032c4.png",
+      "image": "map-chunk-1-41618704.png",
       "imageheight": 352,
       "imagewidth": 352,
       "margin": 0,
