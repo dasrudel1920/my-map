@@ -4916,7 +4916,7 @@
             {
               "name": "playAudio",
               "type": "string",
-              "value": "public/Rudelhymne.mp3"
+              "value": "publicRudelhymne.mp3"
             }
           ],
           "rotation": 0,
@@ -5557,7 +5557,7 @@
     {
       "columns": 11,
       "firstgid": 1,
-      "image": "map-chunk-1-9c2f607f.png",
+      "image": "map-chunk-1-5a5b9dd5.png",
       "imageheight": 352,
       "imagewidth": 352,
       "margin": 0,
