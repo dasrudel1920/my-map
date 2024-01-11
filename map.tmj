@@ -412,14 +412,9 @@
                  "name":"rudelhymne",
                  "properties":[
                         {
-                         "name":"audioLoop",
-                         "type":"bool",
-                         "value":false
-                        }, 
-                        {
                          "name":"playAudio",
                          "type":"string",
-                         "value":"publicRudelhymne.mp3"
+                         "value":"public\/Rudelhymne.mp3"
                         }],
                  "rotation":0,
                  "type":"area",
