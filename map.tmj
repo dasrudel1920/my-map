@@ -4909,14 +4909,9 @@
           "height": 224,
           "properties": [
             {
-              "name": "audioLoop",
-              "type": "bool",
-              "value": false
-            },
-            {
               "name": "playAudio",
               "type": "string",
-              "value": "publicRudelhymne.mp3"
+              "value": "public/Rudelhymne.mp3"
             }
           ],
           "rotation": 0,
@@ -5557,7 +5552,7 @@
     {
       "columns": 11,
       "firstgid": 1,
-      "image": "map-chunk-1-5a5b9dd5.png",
+      "image": "map-chunk-1-2d5b90f0.png",
       "imageheight": 352,
       "imagewidth": 352,
       "margin": 0,
