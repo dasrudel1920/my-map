@@ -414,7 +414,7 @@
                         {
                          "name":"playAudio",
                          "type":"string",
-                         "value":"public\/Rudelhymne.wav"
+                         "value":"Rudelhymne.mp3"
                         }],
                  "rotation":0,
                  "type":"area",
