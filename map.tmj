@@ -405,7 +405,29 @@
          "draworder":"topdown",
          "id":12,
          "name":"floorLayer",
-         "objects":[],
+         "objects":[
+                {
+                 "height":224,
+                 "id":3,
+                 "name":"rudelhymne",
+                 "properties":[
+                        {
+                         "name":"audioLoop",
+                         "type":"bool",
+                         "value":false
+                        }, 
+                        {
+                         "name":"playAudio",
+                         "type":"string",
+                         "value":"public\/Rudelhymne.mp3"
+                        }],
+                 "rotation":0,
+                 "type":"area",
+                 "visible":true,
+                 "width":222,
+                 "x":128,
+                 "y":128
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -468,8 +490,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":15,
- "nextobjectid":1,
+ "nextlayerid":16,
+ "nextobjectid":4,
  "orientation":"orthogonal",
  "properties":[
         {
@@ -702,6 +724,10 @@
                         {
                          "duration":100,
                          "tileid":22
+                        }, 
+                        {
+                         "duration":100,
+                         "tileid":20
                         }, 
                         {
                          "duration":100,
