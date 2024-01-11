@@ -735,8 +735,8 @@
         0,
         0,
         0,
-        0,
-        0,
+        2,
+        2,
         0,
         0,
         0,
@@ -5006,9 +5006,9 @@
             0,
             0,
             0,
-            0,
             74,
-            83,
+            75,
+            84,
             0,
             0,
             0,
@@ -5023,11 +5023,9 @@
             0,
             0,
             0,
-            0,
-            92,
-            100,
-            0,
-            0,
+            93,
+            94,
+            102,
             0,
             0,
             0,
@@ -5042,6 +5040,8 @@
             0,
             0,
             0,
+            111,
+            112,
             0,
             0,
             0,
@@ -5533,14 +5533,14 @@
     {
       "columns": 11,
       "firstgid": 1,
-      "image": "map-chunk-1-6a0dc0ab.png",
+      "image": "map-chunk-1-3f20850f.png",
       "imageheight": 352,
       "imagewidth": 352,
       "margin": 0,
       "name": "Chunk 1",
       "properties": [],
       "spacing": 0,
-      "tilecount": 108,
+      "tilecount": 112,
       "tileheight": 32,
       "tilewidth": 32,
       "tiles": [
@@ -5565,12 +5565,8 @@
           ]
         },
         {
-          "id": 73,
+          "id": 74,
           "animation": [
-            {
-              "duration": 100,
-              "tileid": 74
-            },
             {
               "duration": 100,
               "tileid": 75
@@ -5598,16 +5594,16 @@
             {
               "duration": 100,
               "tileid": 81
+            },
+            {
+              "duration": 100,
+              "tileid": 82
             }
           ]
         },
         {
-          "id": 82,
+          "id": 83,
           "animation": [
-            {
-              "duration": 100,
-              "tileid": 83
-            },
             {
               "duration": 100,
               "tileid": 84
@@ -5635,20 +5631,16 @@
             {
               "duration": 100,
               "tileid": 90
+            },
+            {
+              "duration": 100,
+              "tileid": 91
             }
           ]
         },
         {
-          "id": 91,
+          "id": 93,
           "animation": [
-            {
-              "duration": 100,
-              "tileid": 92
-            },
-            {
-              "duration": 100,
-              "tileid": 93
-            },
             {
               "duration": 100,
               "tileid": 94
@@ -5668,20 +5660,20 @@
             {
               "duration": 100,
               "tileid": 98
+            },
+            {
+              "duration": 100,
+              "tileid": 99
+            },
+            {
+              "duration": 100,
+              "tileid": 100
             }
           ]
         },
         {
-          "id": 99,
+          "id": 101,
           "animation": [
-            {
-              "duration": 100,
-              "tileid": 100
-            },
-            {
-              "duration": 100,
-              "tileid": 101
-            },
             {
               "duration": 100,
               "tileid": 102
@@ -5705,6 +5697,14 @@
             {
               "duration": 100,
               "tileid": 107
+            },
+            {
+              "duration": 100,
+              "tileid": 108
+            },
+            {
+              "duration": 100,
+              "tileid": 109
             }
           ]
         }
