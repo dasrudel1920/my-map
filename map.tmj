@@ -419,7 +419,7 @@
                         {
                          "name":"playAudio",
                          "type":"string",
-                         "value":"public\/Rudelhymne.mp3"
+                         "value":"publicRudelhymne.mp3"
                         }],
                  "rotation":0,
                  "type":"area",
