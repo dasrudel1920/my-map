@@ -23,7 +23,7 @@ WA.onInit().then(async () => {
     // True: the door is open
     // False: the door is closed
     // We listen to variable change to display the correct door image.
-    await WA.state.onVariableChange('doorState').subscribe((doorState) => {
+    WA.state.onVariableChange('doorState').subscribe((doorState) => {
        displayDoor(doorState);
     });
 
@@ -36,7 +36,13 @@ WA.onInit().then(async () => {
         openCloseMessage = WA.ui.displayActionMessage({
             message: "Drücke 'Leertase' zum hissen der Flagge.",
             callback: () => {
-                WA.state.doorState = !WA.state.doorState;
+                console.log("erste nachricht")
+                if (WA.state.doorState === true) {
+                         setTimeout(() => {
+                         console.log("zweite nachricht");
+                     }, 2500); 
+                }    
+                WA.state.doorState = !WA.state.doorState
             }
         });
     });
@@ -55,25 +61,16 @@ WA.onInit().then(async () => {
  * Display the correct door image depending on the state of the door.
  */
 
-function sleep(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function displayDoor(state: unknown) {
+function displayDoor(state: unknown) {
     if (state === true) {
-        console.log("show flag up" + state);
         WA.room.showLayer('door/flag_up');
         WA.room.hideLayer('door/door_closed');
-        await sleep(2500);
-        console.log("show door opened" + state);
         WA.room.showLayer('door/door_opened');
         WA.room.hideLayer('door/flag_up');
     } else {
         console.log("show flag down" + state);
         WA.room.showLayer('door/flag_down');
         WA.room.hideLayer('door/door_opened');
-        await sleep(2500);
-        console.log("show door closed" + state);
         WA.room.showLayer('door/door_closed');
         WA.room.hideLayer('door/flag_down');
     }
