@@ -36,13 +36,18 @@ WA.onInit().then(async () => {
         openCloseMessage = WA.ui.displayActionMessage({
             message: "Drücke 'Leertase' zum hissen der Flagge.",
             callback: () => {
-                console.log("erste nachricht")
-                if (WA.state.doorState === true) {
+                if (WA.state.doorState === 0) {
+                        WA.state.doorState = 2;
                          setTimeout(() => {
-                         console.log("zweite nachricht");
+                         WA.state.doorState = 1;
                      }, 2500); 
-                }    
-                WA.state.doorState = !WA.state.doorState
+                }  else if (WA.state.doorState === 1) {
+                        WA.state.doorState = 3;
+                         setTimeout(() => {
+                         WA.state.doorState = 0;
+                     }, 2500); 
+                }  
+
             }
         });
     });
@@ -62,17 +67,28 @@ WA.onInit().then(async () => {
  */
 
 function displayDoor(state: unknown) {
-    if (state === true) {
-        WA.room.showLayer('door/flag_up');
+    if (state === 0) {
+        WA.room.showLayer('door/door_closed');
+        WA.room.hideLayer('door/door_opened');
+        WA.room.hideLayer('door/flag_up');
+        WA.room.hideLayer('door/flag_down');
+    } else if (state === 1) {
         WA.room.hideLayer('door/door_closed');
         WA.room.showLayer('door/door_opened');
         WA.room.hideLayer('door/flag_up');
-    } else {
-        console.log("show flag down" + state);
-        WA.room.showLayer('door/flag_down');
-        WA.room.hideLayer('door/door_opened');
-        WA.room.showLayer('door/door_closed');
         WA.room.hideLayer('door/flag_down');
+    }
+    } else if (state === 2) {
+        WA.room.hideLayer('door/door_closed');
+        WA.room.hideLayer('door/door_opened');
+        WA.room.showLayer('door/flag_up');
+        WA.room.hideLayer('door/flag_down');
+    }
+    } else if (state === 3) {
+        WA.room.hideLayer('door/door_closed');
+        WA.room.hideLayer('door/door_opened');
+        WA.room.hideLayer('door/flag_up');
+        WA.room.showLayer('door/flag_down');
     }
 }
 
