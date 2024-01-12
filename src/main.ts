@@ -23,9 +23,9 @@ WA.onInit().then(async () => {
     // True: the door is open
     // False: the door is closed
     // We listen to variable change to display the correct door image.
-    //WA.state.onVariableChange('doorState').subscribe((doorState) => {
-    //   displayDoor(doorState);
-    //});
+    WA.state.onVariableChange('doorState').subscribe((doorState) => {
+       displayDoor(doorState);
+    });
 
     displayDoor(WA.state.doorState);
 
@@ -36,22 +36,7 @@ WA.onInit().then(async () => {
         openCloseMessage = WA.ui.displayActionMessage({
             message: "Drücke 'Leertase' zum hissen der Flagge.",
             callback: () => {
-                if (WA.state.doorState == 0) {
-                        WA.state.doorState = "2";
-                        displayDoor("2");
-                         setTimeout(() => {
-                         WA.state.doorState = "1";
-                        displayDoor("1");
-                     }, 2500); 
-                }  else if (WA.state.doorState == 1) {
-                        WA.state.doorState = "3";
-                        displayDoor("3");
-                         setTimeout(() => {
-                         WA.state.doorState = "0";
-                        displayDoor("0");
-                     }, 2500); 
-                }  
-
+                WA.state.doorState = !WA.state.doorState;
             }
         });
     });
@@ -71,27 +56,12 @@ WA.onInit().then(async () => {
  */
 
 function displayDoor(state: unknown) {
-    if (state == 0) {
-        WA.room.showLayer('door/door_closed');
-        WA.room.hideLayer('door/door_opened');
-        WA.room.hideLayer('door/flag_up');
-        WA.room.hideLayer('door/flag_down');
-    } else if (state == 1) {
+    if (state === true) {
         WA.room.hideLayer('door/door_closed');
         WA.room.showLayer('door/door_opened');
-        WA.room.hideLayer('door/flag_up');
-        WA.room.hideLayer('door/flag_down');
-    } else if (state == 2) {
-        WA.room.hideLayer('door/door_closed');
+    } else {
+        WA.room.showLayer('door/door_closed');
         WA.room.hideLayer('door/door_opened');
-        WA.room.showLayer('door/flag_up');
-        WA.room.hideLayer('door/flag_down');
-    }  else if (state == 3) {
-        WA.room.hideLayer('door/door_closed');
-        WA.room.hideLayer('door/door_opened');
-        WA.room.hideLayer('door/flag_up');
-        WA.room.showLayer('door/flag_down');
-    }
 }
 
 
