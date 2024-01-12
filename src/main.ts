@@ -37,16 +37,16 @@ WA.onInit().then(async () => {
             message: "Drücke 'Leertase' zum hissen der Flagge.",
             callback: () => {
                 console.log('der Status ist '+ WA.state.doorState );
-                if (WA.state.doorState === 0) {
-                        WA.state.doorState = 2;
+                if (WA.state.doorState == 0) {
+                        WA.state.doorState = "2";
                          setTimeout(() => {
-                         WA.state.doorState = 1;
+                         WA.state.doorState = "1";
                      }, 2500); 
                     console.log('der Status ist '+ WA.state.doorState );
-                }  else if (WA.state.doorState === 1) {
-                        WA.state.doorState = 3;
+                }  else if (WA.state.doorState == 1) {
+                        WA.state.doorState = "3";
                          setTimeout(() => {
-                         WA.state.doorState = 0;
+                         WA.state.doorState = "0";
                      }, 2500); 
                     console.log('der Status ist '+ WA.state.doorState );
                 }  
@@ -70,22 +70,22 @@ WA.onInit().then(async () => {
  */
 
 function displayDoor(state: unknown) {
-    if (state === 0) {
+    if (state == 0) {
         WA.room.showLayer('door/door_closed');
         WA.room.hideLayer('door/door_opened');
         WA.room.hideLayer('door/flag_up');
         WA.room.hideLayer('door/flag_down');
-    } else if (state === 1) {
+    } else if (state == 1) {
         WA.room.hideLayer('door/door_closed');
         WA.room.showLayer('door/door_opened');
         WA.room.hideLayer('door/flag_up');
         WA.room.hideLayer('door/flag_down');
-    } else if (state === 2) {
+    } else if (state == 2) {
         WA.room.hideLayer('door/door_closed');
         WA.room.hideLayer('door/door_opened');
         WA.room.showLayer('door/flag_up');
         WA.room.hideLayer('door/flag_down');
-    }  else if (state === 3) {
+    }  else if (state == 3) {
         WA.room.hideLayer('door/door_closed');
         WA.room.hideLayer('door/door_opened');
         WA.room.hideLayer('door/flag_up');
