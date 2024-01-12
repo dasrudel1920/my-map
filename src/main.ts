@@ -37,6 +37,7 @@ WA.onInit().then(async () => {
             message: "Press 'space' to open/close the door",
             callback: () => {
                 WA.state.doorState = !WA.state.doorState;
+                console.log("Status sollte geändert sein.");
             }
         });
     });
@@ -48,36 +49,6 @@ WA.onInit().then(async () => {
         }
     });
 
-    WA.room.onEnterLayer('meetingRoom').subscribe(() => {
-        WA.player.state.saveVariable("currentRoom", "meetingRoom", {
-            public: true,
-            persist: false
-        });
-    });
-
-    WA.room.onLeaveLayer('meetingRoom').subscribe(() => {
-        WA.player.state.saveVariable("currentRoom", undefined, {
-            public: true,
-            persist: false
-        });
-    });
-
-    // When someone walks on the doorstep (outside the room), we check if the door is closed
-    // If the door is closed, and if no one is inside (because no player has the "currentRoom" variable set to "meetingRoom"),
-    // we open the door automatically.
-    WA.room.onEnterLayer('doorsteps/outside_doorstep').subscribe(() => {
-        if (WA.state.doorState === false) {
-            const players = WA.players.list();
-            for (const player of players) {
-                if (player.state.currentRoom === "meetingRoom") {
-                    // Someone is in the room
-                    return;
-                }
-            }
-            // If no one is in the room and if the door is closed, we open it automatically
-            WA.state.doorState = true;
-        }
-    });
 
 }).catch(e => console.error(e));
 
