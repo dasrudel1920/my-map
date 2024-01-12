@@ -77,14 +77,12 @@ function displayDoor(state: unknown) {
         WA.room.showLayer('door/door_opened');
         WA.room.hideLayer('door/flag_up');
         WA.room.hideLayer('door/flag_down');
-    }
     } else if (state === 2) {
         WA.room.hideLayer('door/door_closed');
         WA.room.hideLayer('door/door_opened');
         WA.room.showLayer('door/flag_up');
         WA.room.hideLayer('door/flag_down');
-    }
-    } else if (state === 3) {
+    }  else if (state === 3) {
         WA.room.hideLayer('door/door_closed');
         WA.room.hideLayer('door/door_opened');
         WA.room.hideLayer('door/flag_up');
