@@ -23,11 +23,11 @@ WA.onInit().then(async () => {
     // True: the door is open
     // False: the door is closed
     // We listen to variable change to display the correct door image.
-    WA.state.onVariableChange('doorState').subscribe((doorState) => {
-       displayDoor(doorState);
-    });
+    //WA.state.onVariableChange('doorState').subscribe((doorState) => {
+    //   displayDoor(doorState);
+    //});
 
-    //displayDoor(WA.state.doorState);
+    displayDoor(WA.state.doorState);
 
     let openCloseMessage: ActionMessage | undefined;
 
@@ -38,13 +38,17 @@ WA.onInit().then(async () => {
             callback: () => {
                 if (WA.state.doorState == 0) {
                         WA.state.doorState = "2";
+                        displayDoor(2);
                          setTimeout(() => {
                          WA.state.doorState = "1";
+                        displayDoor(1);
                      }, 2500); 
                 }  else if (WA.state.doorState == 1) {
                         WA.state.doorState = "3";
+                        displayDoor(3);
                          setTimeout(() => {
                          WA.state.doorState = "0";
+                        displayDoor(0);
                      }, 2500); 
                 }  
 
