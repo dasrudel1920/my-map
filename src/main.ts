@@ -24,10 +24,10 @@ WA.onInit().then(async () => {
     // False: the door is closed
     // We listen to variable change to display the correct door image.
     WA.state.onVariableChange('doorState').subscribe((doorState) => {
-        displayDoor(doorState);
+        await displayDoor(doorState);
     });
 
-    displayDoor(WA.state.doorState);
+    //displayDoor(WA.state.doorState);
 
     let openCloseMessage: ActionMessage | undefined;
 
