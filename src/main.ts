@@ -38,17 +38,17 @@ WA.onInit().then(async () => {
             callback: () => {
                 if (WA.state.doorState == 0) {
                         WA.state.doorState = "2";
-                        displayDoor(2);
+                        displayDoor("2");
                          setTimeout(() => {
                          WA.state.doorState = "1";
-                        displayDoor(1);
+                        displayDoor("1");
                      }, 2500); 
                 }  else if (WA.state.doorState == 1) {
                         WA.state.doorState = "3";
-                        displayDoor(3);
+                        displayDoor("3");
                          setTimeout(() => {
                          WA.state.doorState = "0";
-                        displayDoor(0);
+                        displayDoor("0");
                      }, 2500); 
                 }  
 
