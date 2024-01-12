@@ -62,8 +62,7 @@ function displayDoor(state: unknown) {
     } else {
         WA.room.showLayer('door/door_closed');
         WA.room.hideLayer('door/door_opened');
+    }
 }
-
-
 
 export {};
