@@ -36,19 +36,7 @@ WA.onInit().then(async () => {
         openCloseMessage = WA.ui.displayActionMessage({
             message: "Drücke 'Leertase' zum hissen der Flagge.",
             callback: () => {
-                if (WA.state.doorState === 0) {
-                    WA.room.showLayer('door/flag_up');
-                    WA.room.hideLayer('door/door_closed');
-                    setTimeout(function() {console.log("Nach 2500ms Pause");}, 2500);
-                    WA.room.showLayer('door/door_opened');
-                    WA.room.hideLayer('door/flag_up');
-                } else if (WA.state.doorState === 1) {
-                    WA.room.showLayer('door/flag_down');
-                    WA.room.hideLayer('door/door_opened');
-                    setTimeout(function() {console.log("Nach 2500ms Pause");}, 2500);
-                    WA.room.showLayer('door/door_closed');
-                    WA.room.hideLayer('door/flag_down');
-                } 
+                WA.state.doorState = !WA.state.doorState;
             }
         });
     });
@@ -68,11 +56,17 @@ WA.onInit().then(async () => {
  */
 function displayDoor(state: unknown) {
     if (state === true) {
-        WA.room.showLayer('door/door_opened');
+        WA.room.showLayer('door/flag_up');
         WA.room.hideLayer('door/door_closed');
+        setTimeout(function() {console.log("Nach 2500ms Pause");}, 2500);
+        WA.room.showLayer('door/door_opened');
+        WA.room.hideLayer('door/flag_up');
     } else {
+        WA.room.showLayer('door/flag_down');
         WA.room.hideLayer('door/door_opened');
+        setTimeout(function() {console.log("Nach 2500ms Pause");}, 2500);
         WA.room.showLayer('door/door_closed');
+        WA.room.hideLayer('door/flag_down');
     }
 }
 
