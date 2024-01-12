@@ -34,7 +34,7 @@ WA.onInit().then(async () => {
     // When someone walks on the doorstep (inside the room), we display a message to explain how to open or close the door
     WA.room.onEnterLayer('doorsteps/inside_doorstep').subscribe(() => {
         openCloseMessage = WA.ui.displayActionMessage({
-            message: "Press 'space' to open/close the door",
+            message: "Drücke 'Leertase' zum hissen der Flagge.",
             callback: () => {
                 WA.state.doorState = !WA.state.doorState;
                 console.log("Status sollte geändert sein.");
