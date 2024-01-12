@@ -497,8 +497,8 @@
                  "properties":[
                         {
                          "name":"default",
-                         "type":"int",
-                         "value":0
+                         "type":"bool",
+                         "value":false
                         }],
                  "rotation":0,
                  "type":"variable",
