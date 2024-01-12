@@ -54,7 +54,12 @@ WA.onInit().then(async () => {
 /**
  * Display the correct door image depending on the state of the door.
  */
-function displayDoor(state: unknown) {
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function displayDoor(state: unknown) {
     if (state === true) {
         console.log("show flag up" + state);
         WA.room.showLayer('door/flag_up');
@@ -74,8 +79,6 @@ function displayDoor(state: unknown) {
     }
 }
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+
 
 export {};
