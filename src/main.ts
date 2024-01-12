@@ -36,16 +36,19 @@ WA.onInit().then(async () => {
         openCloseMessage = WA.ui.displayActionMessage({
             message: "Drücke 'Leertase' zum hissen der Flagge.",
             callback: () => {
+                console.log('der Status ist '+ WA.state.doorState );
                 if (WA.state.doorState === 0) {
                         WA.state.doorState = 2;
                          setTimeout(() => {
                          WA.state.doorState = 1;
                      }, 2500); 
+                    console.log('der Status ist '+ WA.state.doorState );
                 }  else if (WA.state.doorState === 1) {
                         WA.state.doorState = 3;
                          setTimeout(() => {
                          WA.state.doorState = 0;
                      }, 2500); 
+                    console.log('der Status ist '+ WA.state.doorState );
                 }  
 
             }
