@@ -54,12 +54,7 @@ WA.onInit().then(async () => {
     ]);
     
     WA.room.onEnterLayer('FangeMarv').subscribe(() => {
-        openCloseMessage = WA.ui.displayActionMessage({
-            message: "Du hast Marv gefunden. Drücke Leertaste für Weiter.",
-            callback: () => {
-                neuePositionVonMarv();
-            }
-        });
+        neuePositionVonMarv();
     });
 
 
