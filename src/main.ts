@@ -26,16 +26,6 @@ WA.onInit().then(async () => {
     WA.state.onVariableChange('doorState').subscribe((doorState) => {
        displayDoor(doorState);
     });
-    var mySound = WA.sound.loadSound("Rudelhymne.mp3");
-    var config = {
-        volume : 0.5,
-        loop : false,
-        rate : 1,
-        detune : 1,
-        delay : 0,
-        seek : 0,
-        mute : false
-    }
 
     displayDoor(WA.state.doorState);
 
@@ -66,6 +56,16 @@ WA.onInit().then(async () => {
  */
 
 function displayDoor(state: unknown) {
+    var mySound = WA.sound.loadSound("Rudelhymne.mp3");
+    var config = {
+        volume : 0.5,
+        loop : false,
+        rate : 1,
+        detune : 1,
+        delay : 0,
+        seek : 0,
+        mute : false
+    }
     if (state === true) {
         WA.room.hideLayer('door/door_closed');
         WA.room.showLayer('door/door_opened');
