@@ -50,7 +50,7 @@ WA.onInit().then(async () => {
 
     //FangeMarvspiel
     WA.room.setTiles([
-      { x: 6, y: 8, tile: "marv", layer: "FangeMarv" },
+      { x: WA.state.xMarv, y: WA.state.yMarv, tile: "marv", layer: "FangeMarv" },
     ]);
 
     
