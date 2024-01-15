@@ -54,14 +54,12 @@ WA.onInit().then(async () => {
     ]);
     
     WA.room.onEnterLayer('FangeMarv').subscribe(() => {
+        WA.room.setTiles([
+          { x: Number(WA.state.xMarv), y: Number(WA.state.yMarv), tile: null, layer: "FangeMarv" },
+        ]);
         neuePositionVonMarv();
     });
     
-    WA.state.onVariableChange('xMarv').subscribe(() => {
-        WA.room.setTiles([
-          { x: Number(WA.state.xMarv), y: Number(WA.state.yMarv), tile: "marv", layer: "FangeMarv" },
-        ]);
-    });
     WA.state.onVariableChange('yMarv').subscribe(() => {
         WA.room.setTiles([
           { x: Number(WA.state.xMarv), y: Number(WA.state.yMarv), tile: "marv", layer: "FangeMarv" },
