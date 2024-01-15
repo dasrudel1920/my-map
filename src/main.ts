@@ -74,7 +74,7 @@ WA.onInit().then(async () => {
 
 function neuePositionVonMarv(){
     WA.state.xMarv = Number(Math.floor(Math.random() * (12 - 5) + 5));
-    WA.state.yMarv = Number(Math.floor(Math.random() * (14 - 7) + 7));
+    WA.state.yMarv = Number(Math.floor(Math.random() * (13 - 7) + 7));
 }
 
 function displayDoor(state: unknown) {
