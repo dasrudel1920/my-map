@@ -52,6 +52,16 @@ WA.onInit().then(async () => {
     WA.room.setTiles([
       { x: Number(WA.state.xMarv), y: Number(WA.state.yMarv), tile: "marv", layer: "FangeMarv" },
     ]);
+    
+    WA.room.onEnterLayer('FangeMarv').subscribe(() => {
+        openCloseMessage = WA.ui.displayActionMessage({
+            message: "Du hast Marv gefunden. Drücke Leertaste für Weiter.",
+            callback: () => {
+                neuePositionVonMarv();
+            }
+        });
+    });
+
 
     
 }).catch(e => console.error(e));
@@ -59,6 +69,12 @@ WA.onInit().then(async () => {
 /**
  * Display the correct door image depending on the state of the door.
  */
+
+function neuePositionVonMarv(){
+    WA.room.setTiles([
+      { x: 11, y: 13, tile: "marv", layer: "FangeMarv" },
+    ]);
+}
 
 function displayDoor(state: unknown) {
     var mySound = WA.sound.loadSound("Rudelhymne.mp3");
