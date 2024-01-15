@@ -75,7 +75,7 @@ function neuePositionVonMarv(){
     var neuY = Number(Math.floor(Math.random() * (14 - 7) + 7));
     WA.room.setTiles([
         { x: neuX, y: neuY, tile: "marv", layer: "FangeMarv" },
-        { x: Number(WA.state.xMarv), y: Number(WA.state.yMarv), tile: null, layer: "FangeMarv" },
+        { x: Number(WA.state.xMarv), y: Number(WA.state.yMarv), tile: 0, layer: "FangeMarv" },
     ]);
     WA.state.xMarv = neuX;
     WA.state.yMarv = neuY;
