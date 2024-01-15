@@ -1225,6 +1225,15 @@
                          "type":"string",
                          "value":"marv"
                         }]
+                }, 
+                {
+                 "id":41,
+                 "properties":[
+                        {
+                         "name":"name",
+                         "type":"string",
+                         "value":"marvWeg"
+                        }]
                 }],
          "tilewidth":32
         }, 
