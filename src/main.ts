@@ -56,8 +56,17 @@ WA.onInit().then(async () => {
     WA.room.onEnterLayer('FangeMarv').subscribe(() => {
         neuePositionVonMarv();
     });
-
-
+    
+    WA.state.onVariableChange('xMarv').subscribe(() => {
+        WA.room.setTiles([
+          { x: Number(WA.state.xMarv), y: Number(WA.state.yMarv), tile: "marv", layer: "FangeMarv" },
+        ]);
+    });
+    WA.state.onVariableChange('yMarv').subscribe(() => {
+        WA.room.setTiles([
+          { x: Number(WA.state.xMarv), y: Number(WA.state.yMarv), tile: "marv", layer: "FangeMarv" },
+        ]);
+    });
     
 }).catch(e => console.error(e));
 
@@ -66,13 +75,8 @@ WA.onInit().then(async () => {
  */
 
 function neuePositionVonMarv(){
-    var neuX = Number(Math.floor(Math.random() * (12 - 5) + 5));
-    var neuY = Number(Math.floor(Math.random() * (14 - 7) + 7));
-    WA.room.setTiles([
-        { x: neuX, y: neuY, tile: "marv", layer: "FangeMarv" },
-    ]);
-    WA.state.xMarv = neuX;
-    WA.state.yMarv = neuY;
+    WA.state.xMarv = Number(Math.floor(Math.random() * (12 - 5) + 5));
+    WA.state.yMarv = Number(Math.floor(Math.random() * (14 - 7) + 7));
 }
 
 function displayDoor(state: unknown) {
