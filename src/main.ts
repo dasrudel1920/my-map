@@ -71,9 +71,14 @@ WA.onInit().then(async () => {
  */
 
 function neuePositionVonMarv(){
+    var neuX = Number(Math.floor(Math.random() * (12 - 5) + 5));
+    var neuY = Number(Math.floor(Math.random() * (14 - 7) + 7));
     WA.room.setTiles([
-      { x: 11, y: 13, tile: "marv", layer: "FangeMarv" },
+        { x: neuX, y: neuY, tile: "marv", layer: "FangeMarv" },
+        { x: Number(WA.state.xMarv), y: Number(WA.state.yMarv), tile: "41", layer: "FangeMarv" },
     ]);
+    WA.state.xMarv = neuX;
+    WA.state.yMarv = neuY;
 }
 
 function displayDoor(state: unknown) {
