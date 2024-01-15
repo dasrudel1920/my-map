@@ -8,7 +8,7 @@ console.log('Script started successfully');
 // Waiting for the API to be ready
 WA.onInit().then(async () => {
     console.log('Scripting API ready');
-
+    
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
         console.log('Scripting API Extra ready');
@@ -26,6 +26,16 @@ WA.onInit().then(async () => {
     WA.state.onVariableChange('doorState').subscribe((doorState) => {
        displayDoor(doorState);
     });
+    var mySound = WA.sound.loadSound("Rudelhymne.mp3");
+    var config = {
+        volume : 0.5,
+        loop : false,
+        rate : 1,
+        detune : 1,
+        delay : 0,
+        seek : 0,
+        mute : false
+    }
 
     displayDoor(WA.state.doorState);
 
@@ -59,9 +69,11 @@ function displayDoor(state: unknown) {
     if (state === true) {
         WA.room.hideLayer('door/door_closed');
         WA.room.showLayer('door/door_opened');
+        mySound.play(config);
     } else {
         WA.room.showLayer('door/door_closed');
         WA.room.hideLayer('door/door_opened');
+        mySound.stop();
     }
 }
 
