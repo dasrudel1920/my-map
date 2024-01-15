@@ -54,8 +54,8 @@ WA.onInit().then(async () => {
     ]);
     
     WA.room.onEnterLayer('FangeMarv').subscribe(() => {
-        WA.room.updateTiles([
-          {x: Number(WA.state.xMarv),y: Number(WA.state.yMarv), tile: 0, layer: "FangeMarv" },
+        WA.room.setTiles([
+          {x: Number(WA.state.xMarv),y: Number(WA.state.yMarv), layer: "FangeMarv" },
         ]);
         neuePositionVonMarv();
     });
