@@ -47,30 +47,18 @@ WA.onInit().then(async () => {
             openCloseMessage.remove();
         }
     });
-    
-    WA.room.area.onEnter('floorLayer/casino').subscribe(() => {
-        WA.chat.sendChatMessage('Hello world mit floorlayer', 'Mr Robot' );
-    });
-    WA.room.area.onEnter('casino').subscribe(() => {
-        WA.chat.sendChatMessage('Hello world ohne floorLayer', 'Mr Robot' );
-    });
-    
+        
     //FangeMarvspiel
     WA.room.setTiles([
       { x: Number(WA.state.xMarv), y: Number(WA.state.yMarv), tile: "marv", layer: "FangeMarv" },
     ]);
     
     WA.room.onEnterLayer('FangeMarv').subscribe(() => {
-        WA.room.setTiles([
-          {x: Number(WA.state.xMarv),y: Number(WA.state.yMarv), tile: null, layer: "FangeMarv" },
-        ]);
-        neuePositionVonMarv();
-    });
-    
-    WA.state.onVariableChange('yMarv').subscribe(() => {
-        WA.room.setTiles([
-          { x: Number(WA.state.xMarv), y: Number(WA.state.yMarv), tile: "marv", layer: "FangeMarv" },
-        ]);
+            WA.ui.modal.openModal({
+            title: "WorkAdventure website",
+            src: 'https://workadventu.re',
+            position: "left"
+        });
     });
     
 }).catch(e => console.error(e));
@@ -78,11 +66,6 @@ WA.onInit().then(async () => {
 /**
  * Display the correct door image depending on the state of the door.
  */
-
-function neuePositionVonMarv(){
-    WA.state.xMarv = Number(Math.floor(Math.random() * (12 - 5) + 5));
-    WA.state.yMarv = Number(Math.floor(Math.random() * (13 - 7) + 7));
-}
 
 function displayDoor(state: unknown) {
     var mySound = WA.sound.loadSound("Rudelhymne.mp3");
