@@ -47,7 +47,11 @@ WA.onInit().then(async () => {
             openCloseMessage.remove();
         }
     });
-
+    
+    WA.room.area.onEnter('floorLayer/casino').subscribe(() => {
+        WA.chat.sendChatMessage("Hello!", "Mr Robot");
+    });
+    
     //FangeMarvspiel
     WA.room.setTiles([
       { x: Number(WA.state.xMarv), y: Number(WA.state.yMarv), tile: "marv", layer: "FangeMarv" },
