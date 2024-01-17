@@ -56,7 +56,7 @@ WA.onInit().then(async () => {
     WA.room.onEnterLayer('FangeMarv').subscribe(() => {
             WA.ui.modal.openModal({
             title: 'casino',
-            src: 'https://playhop.com/app/274274',
+            src: 'https://google.de',
             position: 'left',
             allowApi: true,
             allow: null
