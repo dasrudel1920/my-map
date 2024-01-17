@@ -57,9 +57,6 @@ WA.onInit().then(async () => {
             WA.ui.modal.openModal({
             title: 'test',
             src: 'https://gamesnacks.com/embed/gamesnacks/games/slime-io',
-            position: 'left',
-            allowApi: true,
-            allow: null
         });
     });
     
