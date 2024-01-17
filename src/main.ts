@@ -57,7 +57,9 @@ WA.onInit().then(async () => {
             WA.ui.modal.openModal({
             title: "WorkAdventure website",
             src: 'https://workadventu.re',
-            position: "left"
+            position: "left",
+            allowApi: true,
+            allow: null
         });
     });
     
