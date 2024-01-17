@@ -55,11 +55,11 @@ WA.onInit().then(async () => {
     
     WA.room.onEnterLayer('FangeMarv').subscribe(() => {
             WA.ui.modal.openModal({
-            title: "WorkAdventure website",
-            src: 'https://workadventu.re',
-            position: "left",
+            title: "Casino",
+            src: 'https://playhop.com/de/app/248905',
+            position: "right",
             allowApi: true,
-            allow: null
+            allow: "fullscreen"
         });
     });
     
