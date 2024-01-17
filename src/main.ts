@@ -59,7 +59,7 @@ WA.onInit().then(async () => {
             src: 'https://playhop.com/de/app/248905',
             position: "right",
             allowApi: true,
-            allow: "fullscreen"
+            allow: null
         });
     });
     
