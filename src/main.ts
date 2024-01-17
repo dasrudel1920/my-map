@@ -52,13 +52,7 @@ WA.onInit().then(async () => {
     WA.room.setTiles([
       { x: Number(WA.state.xMarv), y: Number(WA.state.yMarv), tile: "marv", layer: "FangeMarv" },
     ]);
-    
-    WA.room.onEnterLayer('FangeMarv').subscribe(() => {
-            WA.ui.modal.openModal({
-            title: 'test',
-            src: 'https://gamesnacks.com/embed/gamesnacks/games/slime-io',
-        });
-    });
+
     
 }).catch(e => console.error(e));
 
