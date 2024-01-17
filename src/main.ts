@@ -56,7 +56,7 @@ WA.onInit().then(async () => {
     WA.room.onEnterLayer('FangeMarv').subscribe(() => {
             WA.ui.modal.openModal({
             title: 'test',
-            src: 'https://google.de',
+            src: 'https://gamesnacks.com/embed/gamesnacks/games/slime-io',
             position: 'left',
             allowApi: true,
             allow: null
