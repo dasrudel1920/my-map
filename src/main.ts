@@ -49,7 +49,10 @@ WA.onInit().then(async () => {
     });
     
     WA.room.area.onEnter('floorLayer/casino').subscribe(() => {
-        WA.chat.sendChatMessage("Hello!", "Mr Robot");
+        WA.chat.sendChatMessage('Hello world mit floorlayer', { author: 'Mr Robot' });
+    });
+    WA.room.area.onEnter('casino').subscribe(() => {
+        WA.chat.sendChatMessage('Hello world ohne floorLayer', { author: 'Mr Robot' });
     });
     
     //FangeMarvspiel
